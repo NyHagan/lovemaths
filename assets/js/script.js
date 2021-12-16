@@ -41,8 +41,10 @@ function checkAnswer(){
 
     if(isCorrect){
         alert("you got the answer right!!");
+        incrementScore();
     }else{
         alert(`you got it wrong!You answered ${userAnswer}, the correct answer was ${calculatedAnswer[0]}`);
+        
     }
 
     runGame(calculatedAnswer[1]);
@@ -69,12 +71,17 @@ function calculateCorrectAnswer(){
 }
 
 function incrementScore(){
+   let oldscore = parseInt(document.getElementById("score").innerText);
+   document.getElementById("score").innerText = ++oldscore;
 
 }
 
 function incrementWrongAnswer(){
+    let oldscore = parseInt(document.getElementById("incorrect").innerText);
+   document.getElementById("incorrect").innerText = ++oldscore;
 
 }
+    
 
 function displayAdditionQuestion(operand1, operand2){
     document.getElementById('operand1').textContent = operand1;
@@ -89,3 +96,4 @@ function displaySubtractQuestion(){
 function displayMultiplyQuestion(){
 
 }
+
